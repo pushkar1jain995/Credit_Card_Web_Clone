@@ -3,7 +3,10 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import { BackgroundGradient } from "@/components/ui/background-gradient";
 import Image from "next/image";
+import { Cover } from "@/components/ui/cover";
+
 import {
   Modal,
   ModalBody,
@@ -74,19 +77,18 @@ export function HeroSection() {
             className="text-center lg:text-left"
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/60">
-              Elevate Your Financial Journey
+            <Cover>Elevate Your Financial Journey</Cover>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl">
-              Experience premium benefits, exclusive rewards, and unmatched security with our innovative credit card solutions.
+              Experience premium benefits, exclusive rewards, and unmatched
+              security with our innovative credit card solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button size="lg" className="bg-primary hover:bg-primary/90">
                 Get Started
               </Button>
               <Modal>
-                <ModalTrigger>
-                  Learn More
-                </ModalTrigger>
+                <ModalTrigger className="hover:bg-gray-900">Learn More</ModalTrigger>
                 <ModalBody>
                   <ModalContent>
                     <h4 className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-8">
@@ -150,16 +152,17 @@ export function HeroSection() {
             transition={{ duration: 0.8 }}
             className="relative lg:h-[600px]"
           >
-            <div className="relative w-full h-full">
-              <Image
-                src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=1000"
-                alt="Premium Credit Card"
-                fill
-                className="object-contain rounded-2xl"
-                priority
-              />
-              {/* Gradient overlay for better text contrast */}
-              <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent rounded-2xl" />
+            <div className="relative flex items-center justify-center">
+              <BackgroundGradient className="rounded-[22px] max-w-sm bg-white dark:bg-zinc-900">
+                <Image
+                  src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=1000"
+                  alt="Premium Credit Card"
+                  width={350}
+                  height={400}
+                  className="object-contain rounded-2xl"
+                  priority
+                />
+              </BackgroundGradient>
             </div>
           </motion.div>
         </div>
