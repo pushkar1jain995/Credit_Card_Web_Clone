@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { BackgroundGradient } from "@/components/ui/background-gradient";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -83,9 +84,10 @@ export function Pricing() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className={`relative h-full ${plan.highlighted ? 'border-primary shadow-lg' : ''}`}>
+              <BackgroundGradient>
+              <Card className={`rounded-3xl relative h-full ${plan.highlighted ? 'border-primary shadow-lg' : ''}`}>
                 {plan.highlighted && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-sm rounded-full">
+                  <div className=" absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-sm rounded-full">
                     Most Popular
                   </div>
                 )}
@@ -113,6 +115,7 @@ export function Pricing() {
                   </Button>
                 </CardFooter>
               </Card>
+              </BackgroundGradient>
             </motion.div>
           ))}
         </div>

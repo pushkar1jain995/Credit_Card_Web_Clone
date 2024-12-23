@@ -29,7 +29,7 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className=" bg-black/5 dark:bg-white/5">
+    <section className="py-24 bg-black/5 dark:bg-white/5">
       <AnimatedTestimonials testimonials={testimonials} />
     </section>
   );

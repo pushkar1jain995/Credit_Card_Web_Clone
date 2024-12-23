@@ -6,7 +6,7 @@ export const partners = [
   },
   {
     name: "Mastercard",
-    logo: "https://images.unsplash.com/photo-1586487598141-9e40f647c584?w=800&q=80",
+    logo: "https://images.unsplash.com/photo-1639133694967-640f255f10fc?q=80&w=1527&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description: "Worldwide Financial Services"
   },
   {
