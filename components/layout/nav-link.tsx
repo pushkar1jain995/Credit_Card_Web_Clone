@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 interface NavLinkProps {
@@ -10,12 +11,15 @@ interface NavLinkProps {
 }
 
 export function NavLink({ href, children, className }: NavLinkProps) {
+  const pathname = usePathname();
+  const isActive = pathname === href;
+
   return (
-    <Link 
-      href={href} 
+    <Link
+      href={href}
       className={cn(
         "px-4 py-2 text-sm font-medium transition-colors hover:text-primary",
-        className
+      className
       )}
     >
       {children}

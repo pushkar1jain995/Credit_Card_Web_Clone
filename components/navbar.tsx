@@ -8,10 +8,12 @@ import { Container } from "@/components/ui/container";
 import { NavLink } from "@/components/layout/nav-link";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { cn } from "@/lib/utils";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,9 +36,18 @@ export function Navbar() {
         <Container>
           <nav className="flex items-center justify-between h-16">
             {/* Logo */}
-            <NavLink href="/" className="flex items-center space-x-2 text-primary">
-              <CreditCard className="h-6 w-6" />
-              <span className="font-bold text-xl">CreditPro</span>
+            <NavLink
+              href="/"
+              className="flex items-center space-x-2 text-primary"
+            >
+              <HoverBorderGradient
+                containerClassName="rounded-full"
+                as="button"
+                className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+              >
+                <CreditCard className="h-6 w-6" />
+                <span className="font-bold text-xl">CreditPro</span>
+              </HoverBorderGradient>
             </NavLink>
 
             {/* Desktop Navigation */}
@@ -44,11 +55,12 @@ export function Navbar() {
               <NavLink href="/products">Products</NavLink>
               <NavLink href="/benefits">Benefits</NavLink>
               <NavLink href="/support">Support</NavLink>
+            </div>
               <div className="ml-4 flex items-center space-x-4">
                 <ThemeToggle />
-                <Button>Apply Now</Button>
+                <Button disabled={loading}>Apply Now</Button>
               </div>
-            </div>
+            {/* </div> */}
 
             {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center space-x-4">
@@ -90,7 +102,9 @@ export function Navbar() {
                 <NavLink href="/products">Products</NavLink>
                 <NavLink href="/benefits">Benefits</NavLink>
                 <NavLink href="/support">Support</NavLink>
-                <Button className="w-full mt-4">Apply Now</Button>
+                <Button disabled={loading} className="w-full mt-4">
+                  Apply Now
+                </Button>
               </div>
             </motion.div>
           </motion.div>
