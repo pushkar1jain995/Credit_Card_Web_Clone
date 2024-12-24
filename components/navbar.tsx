@@ -24,11 +24,18 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const navItems = [
+    { name: "Products", link: "/products" },
+    { name: "Benefits", link: "/benefits" },
+    { name: "Support", link: "/support" },
+  ];
+
   return (
     <>
+    <FloatingNav navItems={navItems} />
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+          "top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled
             ? "bg-background/80 backdrop-blur-lg border-b shadow-sm"
             : "bg-transparent"
