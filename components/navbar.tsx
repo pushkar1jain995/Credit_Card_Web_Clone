@@ -9,6 +9,7 @@ import { NavLink } from "@/components/layout/nav-link";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { cn } from "@/lib/utils";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+import { FloatingNav } from "@/components/ui/floating-navbar";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -51,7 +52,7 @@ export function Navbar() {
             </NavLink>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-1">
+            <div className="hidden md:flex items-center space-x-3 gap-2">
               <NavLink href="/products">Products</NavLink>
               <NavLink href="/benefits">Benefits</NavLink>
               <NavLink href="/support">Support</NavLink>
