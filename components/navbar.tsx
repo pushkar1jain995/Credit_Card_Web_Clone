@@ -10,6 +10,7 @@ import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { cn } from "@/lib/utils";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { FloatingNav } from "@/components/ui/floating-navbar";
+import {  Layout,  List,  HelpCircle } from "lucide-react";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,10 +26,10 @@ export function Navbar() {
   }, []);
 
   const navItems = [
-    { name: "Products", link: "/products" },
-    { name: "Benefits", link: "/benefits" },
-    { name: "Support", link: "/support" },
-    { name: <ThemeToggle />, link: "#" },
+    { name: "Products", link: "/products", icon: <Layout className="h-4 w-4" /> },
+    { name: "Benefits", link: "/benefits", icon: <List className="h-4 w-4" /> },
+    { name: "Support", link: "/support", icon: <HelpCircle className="h-4 w-4" /> },
+    { name: <ThemeToggle />, link: "#" }
   ];
 
   return (
