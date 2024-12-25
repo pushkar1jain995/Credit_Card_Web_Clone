@@ -18,7 +18,7 @@ export const CardStack = ({
   const [dragStart, setDragStart] = useState(false);
 
   return (
-    <div className="relative h-60 w-60 md:h-80 md:w-80 mx-auto">
+    <div className="relative h-auto w-full max-w-sm mx-auto">
       {items.map((item, index) => (
         <motion.div
           key={item.title}

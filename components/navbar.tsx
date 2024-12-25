@@ -73,7 +73,6 @@ export function Navbar() {
 
             {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center space-x-4">
-              <ThemeToggle />
               <button
                 className="p-2 hover:bg-accent rounded-lg"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -97,7 +96,7 @@ export function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm md:hidden"
+            className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm md:hidden"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             <motion.div
