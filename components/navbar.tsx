@@ -28,6 +28,7 @@ export function Navbar() {
     { name: "Products", link: "/products" },
     { name: "Benefits", link: "/benefits" },
     { name: "Support", link: "/support" },
+    { name: <ThemeToggle />, link: "#" },
   ];
 
   return (
