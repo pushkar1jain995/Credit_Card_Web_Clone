@@ -8,6 +8,7 @@ import {
 } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { useMediaQuery } from 'usehooks-ts'
 
 export const FloatingNav = ({
   navItems,
@@ -21,6 +22,7 @@ export const FloatingNav = ({
   className?: string;
 }) => {
   const { scrollYProgress } = useScroll();
+  const isMobile = useMediaQuery('(max-width: 768px)')
 
   const [visible, setVisible] = useState(false);
 
@@ -72,12 +74,14 @@ export const FloatingNav = ({
             <span className="hidden sm:block text-sm">{navItem.name}</span>
           </Link>
         ))}
-        <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
-          <Link href="#">
-          <span className="sm:block hidden">Apply Now</span>
-          </Link>
-          <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
-        </button>
+        {!isMobile && (
+          <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
+            <Link href="#">
+              <span className="sm:block hidden">Apply Now</span>
+            </Link>
+            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
+          </button>
+        )}
       </motion.div>
     </AnimatePresence>
   );

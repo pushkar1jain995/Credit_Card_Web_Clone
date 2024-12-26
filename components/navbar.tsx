@@ -66,11 +66,10 @@ export function Navbar() {
               <NavLink href="/benefits">Benefits</NavLink>
               <NavLink href="/support">Support</NavLink>
             </div>
-              <div className="ml-4 flex items-center space-x-4">
+              <div className="ml-4 hidden md:flex items-center space-x-4">
                 <ThemeToggle />
                 <Button disabled={loading}>Apply Now</Button>
               </div>
-            {/* </div> */}
 
             {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center space-x-4">
