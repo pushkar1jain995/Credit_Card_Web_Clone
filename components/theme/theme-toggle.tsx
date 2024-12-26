@@ -9,12 +9,13 @@ import { motion } from "framer-motion";
 export function ThemeToggle() {
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
-  const [isDark, setIsDark] = React.useState(true);
+  const [isDark] = React.useState(true);
 
   // Ensure component is mounted to avoid hydration mismatch
   React.useEffect(() => {
     setMounted(true);
-  }, []);
+    setTheme(isDark ? "dark" : "light");
+  }, [isDark, setTheme]);
 
   if (!mounted) {
     return (
