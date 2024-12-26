@@ -41,7 +41,7 @@ export function ProductComparison() {
                   <TableCell className="font-medium">{feature.name}</TableCell>
                   {products.map((product) => (
                     <TableCell key={product.id} className="text-center">
-                      {feature.availability[product.id] ? (
+                      {feature.availability[product.id as keyof typeof feature.availability] ? (
                         <Check className="h-5 w-5 text-primary mx-auto" />
                       ) : (
                         <X className="h-5 w-5 text-muted-foreground mx-auto" />
