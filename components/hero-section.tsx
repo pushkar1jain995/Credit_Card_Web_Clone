@@ -154,14 +154,14 @@ export function HeroSection() {
           >
             <div className="relative flex items-center justify-center">
               <BackgroundGradient className="rounded-[22px] max-w-sm bg-white dark:bg-zinc-900">
-                <Image
-                  src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=1000"
-                  alt="Premium Credit Card"
-                  width={350}
-                  height={400}
-                  className="object-contain rounded-2xl"
-                  priority
-                />
+              <Image
+                src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=1000"
+                alt="Premium Credit Card"
+                width={350}
+                height={400}
+                className="object-contain rounded-2xl w-auto h-auto"
+                priority
+              />
               </BackgroundGradient>
             </div>
           </motion.div>
