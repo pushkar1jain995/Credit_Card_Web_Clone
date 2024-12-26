@@ -1,0 +1,3 @@
+- This website showcases the front-end interface of a credit card company, featuring a modern and dynamic user experience. 
+- The multi-page design incorporates fluid animations and premium UI components to deliver a seamless and engaging platform for our customers.
+- Each element is thoughtfully crafted to ensure both functionality and visual appeal.
