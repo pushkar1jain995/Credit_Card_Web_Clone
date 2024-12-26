@@ -7,8 +7,9 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
+  const [isDark, setIsDark] = React.useState(true);
 
   // Ensure component is mounted to avoid hydration mismatch
   React.useEffect(() => {
